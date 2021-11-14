@@ -9,10 +9,10 @@ class Controller {
 	}
 
 	public function index() {
-		Response::setSuccessMessage("Hello everyone. It's simple API for this project. ");
+		Response::setSuccessMessage(Message::get('welcome_message'));
 	}
 
 	public function error404() {
-		Response::setNotFoundMessage("Page not found");
+		Response::setNotFoundMessage(Message::get('page_not_found'));
 	}
 }

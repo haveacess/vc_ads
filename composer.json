@@ -2,7 +2,11 @@
     "autoload": {
         "classmap": [
 			"Controllers/",
+			"Models/",
+			"Services/",
+			"Message.php",
 			"Request.php", 
-			"Response.php"]
+			"Response.php"
+		]
     }
 }

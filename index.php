@@ -7,8 +7,7 @@ $data = explode('?', $_SERVER['REQUEST_URI']);
 $route = $data[0];
 $query = $data[1] ?? '';
 
-$map[] = ['route' => '/api/ads', 'controller' => 'Ads', 'action' => 'test'];
-$map[] = ['route' => '*', 'controller' => '', 'action' => 'error404'];
+$map = include('routes.php');
 
 foreach ($map as $i => &$routeData) {
 	if (in_array($route, [$routeData['route'], "{$routeData['route']}/"])) {
