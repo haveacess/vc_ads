@@ -1,13 +1,13 @@
 <?php
 
-include_once 'Controllers/AdsController.php';
+require_once __DIR__ . '/vendor/autoload.php'; 
 
 $data = explode('?', $_SERVER['REQUEST_URI']);
 
 $route = $data[0];
 $query = $data[1] ?? '';
 
-$map[] = ['route' => '/ads', 'controller' => 'Ads', 'action' => 'test'];
+$map[] = ['route' => '/api/ads', 'controller' => 'Ads', 'action' => 'test'];
 $map[] = ['route' => '*', 'controller' => '', 'action' => 'error404'];
 
 foreach ($map as $i => &$routeData) {
@@ -16,20 +16,7 @@ foreach ($map as $i => &$routeData) {
 	}
 }
 
-$data = [];
-if ($query) {
-	$gluedValues = explode('&', $query);
-
-	foreach ($gluedValues as $gluedValue) {
-		$keyValue = explode('=', $gluedValue);
-		$key = $keyValue[0];
-		$value = $keyValue[1];
-		$data[$key] = $value;
-	}
-}
-
-
-$controller = new ("{$routeData['controller']}Controller")($_SERVER, $data);
+$controller = new ("{$routeData['controller']}Controller")($_SERVER, $_REQUEST);
 
 $action = $routeData['action'];
 $controller->$action();

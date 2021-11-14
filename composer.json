@@ -1,0 +1,8 @@
+{
+    "autoload": {
+        "classmap": [
+			"Controllers/",
+			"Request.php", 
+			"Response.php"]
+    }
+}

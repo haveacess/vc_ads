@@ -1,5 +1,4 @@
 <?php
-include_once 'Request.php';
 
 class Controller {
 
@@ -10,6 +9,10 @@ class Controller {
 	}
 
 	public function index() {
+		Response::setSuccessMessage("Hello everyone. It's simple API for this project. ");
+	}
 
+	public function error404() {
+		Response::setNotFoundMessage("Page not found");
 	}
 }

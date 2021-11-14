@@ -1,7 +1,5 @@
 <?php
 
-include_once 'Controllers/Controller.php';
-
 class AdsController extends Controller {
 
 	public function __construct($request, $data) {
@@ -17,6 +15,6 @@ class AdsController extends Controller {
 	}
 
 	public function test() {
-		var_dump($this->request->get('test'));
+		Response::setSuccessMessage("hello world", ['a' => 1, 'b' => 4]);
 	}
 }
