@@ -12,7 +12,7 @@ composer install
 
 4. Импортируем SQL дамп. **ads.sql** - в папке с проектом
 
-5. Теперь можно и проверить работу API. Документация к API: <link>
+5. Теперь можно и проверить работу API. Документация к API: [Link Postman Collection](https://www.getpostman.com/collections/61a9778956506a208551)
 ---------
 Время затраченное на реализацию:
 
