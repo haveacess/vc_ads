@@ -90,7 +90,9 @@ class Request {
 		}
 
 		foreach($routeMapParts as $i => $part) {
-			if (!self::isRouteArgPattern($part) && $part == $receivedRouteParts[$i]) {
+			if (isset($receivedRouteParts[$i]) && 
+				!self::isRouteArgPattern($part) && 
+				$part == $receivedRouteParts[$i]) {
 				continue;
 			}
 			if (self::isRouteArgPattern($part) &&
@@ -118,7 +120,9 @@ class Request {
 
 		$args = [];
 		foreach($routeMapParts as $i => $part) {
-			if (!self::isRouteArgPattern($part) && $part == $receivedRouteParts[$i]) {
+			if (isset($receivedRouteParts[$i]) && 
+				!self::isRouteArgPattern($part) && 
+				$part == $receivedRouteParts[$i]) {
 				continue;
 			}
 

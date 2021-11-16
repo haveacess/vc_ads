@@ -67,7 +67,7 @@ class AdsService extends Service {
 		$model = new AdsModel();
 		$result = $model->selectByPrimary(['id', 'text', 'price', 'limit_views', 'banner'], $id);
 
-		if ($result === []) {
+		if (is_null($result)) {
 			$this->setError(Message::get('object_not_found'));
 			return false;
 		}
@@ -89,7 +89,7 @@ class AdsService extends Service {
 	public function editAd($id) {
 		$model = new AdsModel();
 		$result = $model->update([
-			'id' => null,
+			'id' => $id,
 			'text' => $this->data['text'],
 			'price' => (int)$this->data['price'],
 			'limit_views' => (int)$this->data['limit_views'],
@@ -112,7 +112,7 @@ class AdsService extends Service {
 	public function create() {
 		$model = new AdsModel();
 		$result = $model->insert([
-			'id' => null,
+			'id' => 'null',
 			'text' => $this->data['text'],
 			'price' => (int)$this->data['price'],
 			'limit_views' => (int)$this->data['limit_views'],

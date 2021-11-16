@@ -43,12 +43,12 @@ class AdsController extends Controller {
 			return false;
 		}
 
-		if (!$service->getAd($data['id'])) {
+		if (!$service->getAd($id)) {
 			Response::setErrorMessage($service->getError());
 			return false;
 		}
 
-		$editedAd = $service->editAd($data['id']);
+		$editedAd = $service->editAd($id);
 
 		$editedAd ?
 			Response::setSuccessMessage(Message::get('object_was_edited'), $editedAd) :
