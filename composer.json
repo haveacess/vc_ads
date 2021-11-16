@@ -8,5 +8,8 @@
 			"Request.php", 
 			"Response.php"
 		]
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
     }
 }
